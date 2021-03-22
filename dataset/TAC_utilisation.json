@@ -1,0 +1,42 @@
+{
+	"name": "TAC_utilisation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileServer1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "tac-metriques.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "register",
+				"type": "String"
+			},
+			{
+				"name": "qrCode",
+				"type": "String"
+			},
+			{
+				"name": "notified",
+				"type": "String"
+			}
+		]
+	}
+}
