@@ -1165,6 +1165,169 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Copy data8",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy data7",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "code_region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "code_region",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "libelle_region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "libelle_region",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "code_departement",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "code_departement",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "libelle_departement",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "libelle_departement",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date_fin_semaine",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date_fin_semaine",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "type_de_vaccin",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "type_de_vaccin",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "nb_ucd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nb_ucd",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "nb_doses",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nb_doses",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "livraisons_vaccin",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "target_livraisons_vaccin",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
