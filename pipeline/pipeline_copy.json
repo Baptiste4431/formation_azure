@@ -166,7 +166,7 @@
 					{
 						"activity": "Copy data1",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -378,7 +378,7 @@
 					{
 						"activity": "Copy data2",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -590,7 +590,7 @@
 					{
 						"activity": "Copy data3",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -742,7 +742,7 @@
 					{
 						"activity": "Copy data4",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -858,7 +858,7 @@
 					{
 						"activity": "Copy data5",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
