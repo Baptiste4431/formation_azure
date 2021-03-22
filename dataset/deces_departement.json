@@ -1,0 +1,58 @@
+{
+	"name": "deces_departement",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileServer1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "deces_departement.csv"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date_evenement",
+				"type": "String"
+			},
+			{
+				"name": "Zone",
+				"type": "String"
+			},
+			{
+				"name": "Communes_a_envoi_dematerialise_Deces2021",
+				"type": "String"
+			},
+			{
+				"name": "Total_deces_2021",
+				"type": "String"
+			},
+			{
+				"name": "Communes_a_envoi_dematerialise_Deces2020",
+				"type": "String"
+			},
+			{
+				"name": "Total_deces_2020",
+				"type": "String"
+			},
+			{
+				"name": "Communes_a_envoi_dematerialise_Deces2019",
+				"type": "String"
+			},
+			{
+				"name": "Total_deces_2019",
+				"type": "String"
+			}
+		]
+	}
+}
