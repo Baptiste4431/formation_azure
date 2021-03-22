@@ -1,0 +1,58 @@
+{
+	"name": "livraison_vaccins",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileServer1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "flux-total-dep.csv"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "code_region",
+				"type": "String"
+			},
+			{
+				"name": "libelle_region",
+				"type": "String"
+			},
+			{
+				"name": "code_departement",
+				"type": "String"
+			},
+			{
+				"name": "libelle_departement",
+				"type": "String"
+			},
+			{
+				"name": "date_fin_semaine",
+				"type": "String"
+			},
+			{
+				"name": "type_de_vaccin",
+				"type": "String"
+			},
+			{
+				"name": "nb_ucd",
+				"type": "String"
+			},
+			{
+				"name": "nb_doses",
+				"type": "String"
+			}
+		]
+	}
+}
