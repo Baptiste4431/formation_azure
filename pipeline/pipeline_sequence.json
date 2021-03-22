@@ -1,0 +1,41 @@
+{
+	"name": "pipeline_sequence",
+	"properties": {
+		"activities": [
+			{
+				"name": "pipeline_copy_data",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipeline_copy_data",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "pipeline_copy_newdata",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pipeline_copy_data",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipeline_copy_newdata",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
